@@ -34,3 +34,5 @@ preda <- function(x, k){
         }
         return(mean(abs(pred - x[(k + 1) : n])))
 }
+
+# 2.9
