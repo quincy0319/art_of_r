@@ -1,3 +1,8 @@
+# 2.4.2 select all the elements except the last one
+z <- c(5, 12, 13)
+z[1:(length(z) - 1)]
+z[- length(z)] # simpler version
+
 # 2.5.1
 findruns <- function(x, k){
         n <- length(x)
