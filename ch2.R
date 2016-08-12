@@ -35,4 +35,30 @@ preda <- function(x, k){
         return(mean(abs(pred - x[(k + 1) : n])))
 }
 
-# 2.9
+# 2.9.1 
+# findud() converts vector v to 1s, 0s, representing an element
+# increasing or not, relative to the previous one; output length is 1
+# less than input
+
+findud <- function(v){
+        vud <- v[-1] - v[-length(v)]
+        return(ifelse(vud > 0, 1, -1))
+}
+udcorr <- function(x, y){
+        ud <- lapply(list(x, y), findud)
+        return(mean(ud[[1]] == ud[[2]]))
+}
+
+diff()
+sign()
+
+# 2.9.2
+ifelse(g == "M", 1, ifelse(g == "F", 2, 3))
+ab[, 1] <- ifelse(ab[, 1] == "M", 1, ifelse(ab[, 1] == "F", 2, 3))
+m <- which(g == "M")
+f <- which(g == "F")
+i <- which(g == "I")
+
+grps <- list()
+for (gen in c("M", "F", "I")) grps[[gen]] <- whic(g == gen)
+
