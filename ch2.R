@@ -3,7 +3,7 @@ z <- c(5, 12, 13)
 z[1:(length(z) - 1)]
 z[- length(z)] # simpler version
 
-# 2.5.1
+# 2.5.1 寻找连续出现1的游程
 findruns <- function(x, k){
         n <- length(x)
         runs <- NULL
@@ -15,7 +15,7 @@ findruns <- function(x, k){
 
 findruns1 <- function(x,k){
         n <- length(x)
-        runs <- vector(length = n)
+        runs <- vector(length = n) # 提前分配内存
         count <- 0
         for (i in 1 : (n - k + 1)){
                 if (all(x[i : (i + k - 1)] == 1)){
@@ -29,7 +29,7 @@ findruns1 <- function(x,k){
         ruturn(runs)
 }
 
-# 2.5.2
+# 2.5.2 预测离散值时间序列
 preda <- function(x, k){
         n <- length(x)
         k2 <- k / 2
